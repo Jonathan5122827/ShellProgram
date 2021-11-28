@@ -98,18 +98,18 @@ endltoken = strchr(lp,'\n');
 addqueue(line);    //adds command inputted into myhistory queue
 
 /* I/O redirection */
-insig = strstr(line, "< ");  //test if "< (filename)" exists in given command
+char *insig = strstr(line, "< ");  //test if "< (filename)" exists in given command
 if (insig)
 {
     char* infile = strchr(line, "< ");
-    int fd = open(infile, O_WRONLY | O_APPEND);
+    int fd = open(infile, O_RDONLY );
     dup2(fd, STDIN_FILENO);
 }
-osig = strstr(line, "> ");   //test if "> (filename)" exists in given command
+char *osig = strstr(line, "> ");   //test if "> (filename)" exists in given command
 if (osig)
 {
     char* outfile = strchr(line, "> ");
-    int fd = open(outfile, O_WRONLY | O_APPEND);
+    int fd = open(outfile, O_WRONLY);
     dup2(fd, STDOUT_FILENO);
 }
 /*end of I/O redirection*/

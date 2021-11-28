@@ -10,11 +10,12 @@
 #include <string.h>
 #include <sys/types.h>
 #include <stdbool.h>
+#include <fcntl.h>
 int find_command(char  *, char  *);
 int cd(char *pth);
 int exit();
 void myhistory();
-void addqueue(cmd_string);
+void addqueue(char *cmd_string);
 
 //alias declarations
 char *token2;
