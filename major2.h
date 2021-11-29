@@ -13,7 +13,7 @@
 #include <fcntl.h>
 int find_command(char  *, char  *);
 int cd(char *pth);
-int exit();
+int exit(argv);
 void myhistory();
 void addqueue(char *cmd_string);
 

@@ -1,0 +1,7 @@
+string pipe(user_input??, ??) {
+
+    commands = user_input.strtok(delimiter/token ??);
+
+    return commands;
+
+}
